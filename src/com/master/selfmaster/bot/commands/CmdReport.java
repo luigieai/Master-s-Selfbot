@@ -12,7 +12,7 @@ public class CmdReport extends Command {
 
 	/*
 	 * Report
-	 *  $report <nome> <puniÁ„o> <modo de jogo> <prova> <motivo>
+	 *  $report <nome> <puni??o> <modo de jogo> <prova> <motivo>
 	 */
 	
 	public CmdReport() {
@@ -25,8 +25,8 @@ public class CmdReport extends Command {
 	public void execute(String[] args, MessageReceivedEvent e) {
 		if(args.length <= 4){
 			if(args.length == 1 && args[0].equalsIgnoreCase("help") || args.length == 1 && args[0].equalsIgnoreCase("ajuda")){
-				responder("Sintaxe: "+SelfMaster.getCommandPrefix() + "report <nome> <puniÁ„o> <modo de jogo> <prova> <motivo>"
-						+ "\nO motivo pode conter espaÁo, o resto n„o!", e);
+				responder("Sintaxe: "+SelfMaster.getCommandPrefix() + "report <nome> <puni√ß√£o> <modo de jogo> <prova> <motivo>"
+						+ "\nO motivo pode conter espa√ßo, o resto n√£o!", e);
 			}else{
 				responder("Sintaxe errada! Digite "+SelfMaster.getCommandPrefix()+"report ajuda",e);
 			}
@@ -49,13 +49,11 @@ public class CmdReport extends Command {
 				motivo = sb.toString();
 			}
 			responder("Nome: " + nome
-					 +"\nPuniÁ„o: " + pun 
+					 +"\nPuni√ß√£o: " + pun
 					 +"\nModo de jogo: "+modo
 					 +"\nMotivo: " + motivo
 					 +"\nProva: " + prova
 					 +"\nData: "+data,e);
 		}
 	}
-
-	
 }

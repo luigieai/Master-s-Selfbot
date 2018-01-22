@@ -18,11 +18,13 @@ public class SelfMaster {
 	private static CommandHandler commandHandler;
 	private static JDA jda;
 	private static TrayHandler trayHandler;
+	private static EmojiHandler emojiHandler;
 
 	public SelfMaster(String token) throws LoginException, IllegalArgumentException, InterruptedException, RateLimitedException {
 		SelfMaster.jda = new JDABuilder(AccountType.CLIENT).setToken(token).buildBlocking();
 		SelfMaster.commandPrefix = "$";
 		SelfMaster.commandHandler = new CommandHandler();
+		SelfMaster.emojiHandler = new EmojiHandler();
 		SelfMaster.jda.addEventListener(new EventHandler());
 		if (SystemTray.isSupported()) {
 			SelfMaster.trayHandler = new TrayHandler();
@@ -45,4 +47,6 @@ public class SelfMaster {
 	public static TrayHandler getTrayHandler() {
 		return trayHandler;
 	}
+
+	public static EmojiHandler getEmojiHandler() {return  emojiHandler; }
 }

@@ -7,7 +7,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 public abstract class Command {
 
 	protected String name;
-	protected String description = "Sem descrição";
+	protected String description = "Sem descriÃ§Ã£o";
 	protected Tipo tipo = Tipo.MANTER_E_ENVIAR;
 
 	public abstract void execute(String[] args, MessageReceivedEvent e);

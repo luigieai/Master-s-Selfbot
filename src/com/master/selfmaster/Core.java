@@ -24,8 +24,8 @@ public class Core {
 			prop.setProperty("token", "seutoken");
 			prop.store(out, null);
 			out.close();
-			showDialog("Foi detectado que n„o h· nenhum arquivo de configuraÁ„o!"
-					+ "\nNa pasta desse arquivo foi criado um 'config.properties', por favor, configurar o bot l·");
+			showDialog("Foi detectado que n√£o h√° nenhum arquivo de configura√ß√£o!"
+					+ "\nNa pasta desse arquivo foi criado um 'config.properties', por favor, configurar o bot la");
 			return;
 		}
 		InputStream input = new FileInputStream("config.properties");
@@ -33,14 +33,14 @@ public class Core {
 		prop.load(input);
 		input.close();
 		if (prop.getProperty("token") == null) {
-			showDialog("N„o foi achado um token na config.properties");
+			showDialog("N√£o foi achado um token na config.properties");
 			return;
 		}
 		String token = prop.getProperty("token");
 		try {
 			new SelfMaster(token);
 		} catch (LoginException e) {
-			showDialog("N„o foi possivel fazer o login, verifique seu token em config.properties!");
+			showDialog("N√£o foi possivel fazer o login, verifique seu token em config.properties!");
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {

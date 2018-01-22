@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.master.selfmaster.bot.commands.CmdDev;
+import com.master.selfmaster.bot.commands.CmdEmojis;
 import com.master.selfmaster.bot.commands.CmdEvento;
 import com.master.selfmaster.bot.commands.CmdReport;
 
@@ -16,6 +17,7 @@ public class CommandHandler {
 		addCommand(new CmdDev());
 		addCommand(new CmdReport());
 		addCommand(new CmdEvento());
+		addCommand(new CmdEmojis());
 	}
 	
 	public void addCommand(Command c){

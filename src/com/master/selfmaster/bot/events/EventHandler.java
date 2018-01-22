@@ -3,8 +3,10 @@ package com.master.selfmaster.bot.events;
 import java.util.Arrays;
 
 import com.master.selfmaster.bot.Command;
+import com.master.selfmaster.bot.EmojiHandler;
 import com.master.selfmaster.bot.SelfMaster;
 
+import com.master.selfmaster.bot.util.TrayHandler;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -25,9 +27,20 @@ public class EventHandler extends ListenerAdapter {
 				for (Command cmds : SelfMaster.getCommandHandler().getCommands()) {
 					if (cmd.equalsIgnoreCase(cmds.getName())) {
 						cmds.run(args, e);
-						break; // Se teoricamente não pode ter comandos com nomes iguais, para que continuar o loop?
+						break; // Se teoricamente nï¿½o pode ter comandos com nomes iguais, para que continuar o loop?
 					}
 				}
+			}else{
+				String newMsg = e.getMessage().getRawContent();
+				boolean modify = false;
+				for(String key : SelfMaster.getEmojiHandler().getEmojis().keySet()){
+					if(newMsg.contains(key)){
+						newMsg = newMsg.replace(key, SelfMaster.getEmojiHandler().getEmojis().get(key));
+						modify = true;
+					}
+				}
+				if(modify)
+					e.getMessage().editMessage(newMsg).queue();
 			}
 		}
 	}

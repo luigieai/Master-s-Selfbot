@@ -32,14 +32,14 @@ public class CmdDev extends Command {
 		//Pegar o server/pessoa atual
 			String sv = "";
 			if(e.getChannelType() == ChannelType.PRIVATE){
-				sv = "Esse é um chat privado! Você esta conversando com a bela companhia de: **"+e.getPrivateChannel().getUser().getAsMention() + "**";
+				sv = "Esse Ã© um chat privado! VocÃª esta conversando com a bela companhia de: **"+e.getPrivateChannel().getUser().getAsMention() + "**";
 			}else{
-				sv = "Você esta no adoravel chat: **#" + e.getChannel().getName() + "**";
+				sv = "VocÃª esta no adoravel chat: **#" + e.getChannel().getName() + "**";
 			}
 		// Manda msg
 		responder("-------------------------------------"
-				+ "\nComando do MasterSelfBot ativado!\nOlá " + e.getJDA().getSelfUser().getName() +", como vai?"
-				+ "\nHoje é dia "+ d +"\nO horario atual é: "+ h
+				+ "\nComando do MasterSelfBot ativado!\nOlÃ¡ " + e.getJDA().getSelfUser().getName() +", como vai?"
+				+ "\nHoje Ã© dia "+ d +"\nO horario atual: "+ h
 				+ "\n" + sv
 				+ "\n**Feito por Luigi!**"
 				+ "\n-------------------------------------",e);
